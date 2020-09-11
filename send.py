@@ -20,8 +20,16 @@ count = 0
 #send each UDP packet to local host: 1337, wait 1 ms in between sends
 for payload in payloads:
     count += 1
-    print('sending payload ',payload)
+    if (count>1):
+        break
+
+    # print(type(payload))
+    # for p in payload:
+    #     print(str(p),' ',oct(p),' ',hex(p),' ',int(p))
+
+    #print(f'{payload[0]}\n{payload[1]}\n{payload[2]}\n{payload[3]}')
+
     sock.sendto(payload, ('127.0.0.1', 1337))
-    time.sleep(1) #change to 0.001s before submission
+    time.sleep(.001) #change to 0.001s before submission
 
 sock.close()
