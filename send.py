@@ -20,8 +20,8 @@ count = 0
 #send each UDP packet to local host: 1337, wait 1 ms in between sends
 for payload in payloads:
     count += 1
-    if (count>1):
-        break
+    # if (count>4000):
+    #     break
 
     # print(type(payload))
     # for p in payload:
